@@ -1,23 +1,15 @@
-# 1 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino"
+# 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/Esp32-Practice-Itembox.ino"
  /*
-
  * @file Esp32-Practice-EncoderRfid.ino
-
  * @author 홍진우 KH.jinu (kevinlike@naver.com)
-
  * @brief
-
  * @version 1.0
-
  * @date 2023-04-25
-
  *
-
  * @copyright Copyright (c) 2023
-
  */
-# 11 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino"
-# 12 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino" 2
+
+# 12 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/Esp32-Practice-Itembox.ino" 2
 
 void setup(void) {
   Serial.begin(115200);
@@ -29,7 +21,7 @@ void setup(void) {
 void loop(void) {
   GameSystem();
 }
-# 1 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
+# 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/encoder.ino"
 long readEncoderValue(void){
     return encoderValue/210 -3;
 }
@@ -116,7 +108,7 @@ void updateEncoder(){
 
   lastEncoded = encoded; //store this value for next time
 }
-# 1 "c:\\Github\\Esp32-Practice-Itembox\\game.ino"
+# 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/game.ino"
 void GameSystem(){
   if(RfidPASS == 0){
     NeoWaiting_Blue();
@@ -164,7 +156,7 @@ void GameQuiz_check(){
     NeoBlink(3, 500);
   }
 }
-# 1 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
+# 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/neopixel.ino"
 void NeopixelInit()
 {
   encoder_neo.begin();
@@ -230,7 +222,7 @@ void NeoWaiting_Blue(){
   }
   encoder_neo.show();
 }
-# 1 "c:\\Github\\Esp32-Practice-Itembox\\rfid.ino"
+# 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/rfid.ino"
 void RfidInit(){
   Serial.println("------------Rfid Initialized------------");
   nfc.begin();

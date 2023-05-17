@@ -1,0 +1,30 @@
+/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/ArduinoOutput/core/esp32-hal-log.c.o: \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/cores/esp32/esp32-hal-log.c \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/stdio.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/_ansi.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/newlib.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/config.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/ieeefp.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/features.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/esp32/xtensa/config/core-isa.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/cdefs.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/_default_types.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/reent.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/_ansi.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/_types.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/_types.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/lock.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/types.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/machine/types.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/sched.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/stdio.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/cores/esp32/esp32-hal-log.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/config/sdkconfig.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/log/esp_log.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/stdint.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/sys/_intsup.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/esp32/rom/ets_sys.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/soc/soc/soc.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/esp32/esp_assert.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/newlib/assert.h \
+ /Users/kh_jinu/Library/Arduino15/packages/esp32/hardware/esp32/1.0.6/tools/sdk/include/log/esp_log_internal.h

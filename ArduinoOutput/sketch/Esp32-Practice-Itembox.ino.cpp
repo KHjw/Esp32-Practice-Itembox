@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino"
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/Esp32-Practice-Itembox.ino"
  /*
  * @file Esp32-Practice-EncoderRfid.ino
  * @author 홍진우 KH.jinu (kevinlike@naver.com)
@@ -12,47 +12,6 @@
 
 #include "Itembox.h"
 
-#line 13 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino"
-void setup(void);
-#line 20 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino"
-void loop(void);
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
-long readEncoderValue(void);
-#line 5 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
-boolean isButtonPushDown(void);
-#line 14 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
-void Encoder_RevCount();
-#line 41 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
-void Encoder_Setup();
-#line 55 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
-void Encoder_Progress_Loop();
-#line 74 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
-void updateEncoder();
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\game.ino"
-void GameSystem();
-#line 25 "c:\\Github\\Esp32-Practice-Itembox\\game.ino"
-void GameQuiz_system();
-#line 35 "c:\\Github\\Esp32-Practice-Itembox\\game.ino"
-void GameQuiz_check();
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
-void NeopixelInit();
-#line 6 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
-void EncoderPointNeo();
-#line 32 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
-void NeoGreen(int time);
-#line 44 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
-void NeoBlink(int num, int time);
-#line 57 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
-void NeoWaiting_Blue();
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\rfid.ino"
-void RfidInit();
-#line 16 "c:\\Github\\Esp32-Practice-Itembox\\rfid.ino"
-void Rfid_Identify(uint8_t data[32]);
-#line 40 "c:\\Github\\Esp32-Practice-Itembox\\rfid.ino"
-void RfidLoop();
-#line 70 "c:\\Github\\Esp32-Practice-Itembox\\rfid.ino"
-void RfidCheckLoop();
-#line 13 "c:\\Github\\Esp32-Practice-Itembox\\Esp32-Practice-Itembox.ino"
 void setup(void) {
   Serial.begin(115200);
   NeopixelInit();
@@ -64,7 +23,7 @@ void loop(void) {
   GameSystem();
 }
 
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\encoder.ino"
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/encoder.ino"
 long readEncoderValue(void){
     return encoderValue/210 -3;
 }
@@ -151,7 +110,7 @@ void updateEncoder(){
 
   lastEncoded = encoded; //store this value for next time
 }
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\game.ino"
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/game.ino"
 void GameSystem(){
   if(RfidPASS == 0){
     NeoWaiting_Blue();
@@ -189,9 +148,8 @@ void GameQuiz_system(){
 void GameQuiz_check(){
   if(Player_guess == Quiz_answer[QuizCount]){
     QuizCount += 1;
-    Serial.print("[[[[Quiz ");    // 네오픽셀 초록
-    Serial.print(QuizCount);
-    Serial.println("]]]] Success");
+
+    Serial.println("[[[[Quiz " + (String)(QuizCount) + "]]]] Success");
     NeoGreen(1500);
   }
   else{
@@ -199,7 +157,12 @@ void GameQuiz_check(){
     NeoBlink(3, 500);
   }
 }
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\neopixel.ino"
+
+void itembox_activated(){
+  NeoShowColor(White);
+  
+}
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/neopixel.ino"
 void NeopixelInit()
 {
   encoder_neo.begin();
@@ -243,19 +206,6 @@ void NeoGreen(int time){
   encoder_neo.show();
 }
 
-void NeoBlink(int num, int time){
-  for(int j=0; j<num; j++){
-    for(int i=0; i<ENCODER_NEONUM; i++)
-      encoder_neo.setPixelColor(i, 10, 0, 0);
-    encoder_neo.show();
-    delay(time);
-    for(int i=0; i<ENCODER_NEONUM; i++)
-      encoder_neo.setPixelColor(i, 0, 0, 0);
-    encoder_neo.show();
-    delay(time);
-  }
-}
-
 void NeoWaiting_Blue(){
   for(int i=0; i<ENCODER_NEONUM; i++){
     encoder_neo.setPixelColor(i, 0, 0, 0);
@@ -265,7 +215,27 @@ void NeoWaiting_Blue(){
   }
   encoder_neo.show();
 }
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\rfid.ino"
+
+void NeoShowColor(int color_code){
+  for(int i=0; i<ENCODER_NEONUM; i++){
+    encoder_neo.setPixelColor(i, color[color_code]);
+  }
+  encoder_neo.show();
+}
+
+void NeoBlink(int color_code, int num, int time){
+  for(int j=0; j<num; j++){
+    for(int i=0; i<ENCODER_NEONUM; i++)
+      encoder_neo.setPixelColor(i, color[color_code]);
+    encoder_neo.show();
+    delay(time);
+    for(int i=0; i<ENCODER_NEONUM; i++)
+      encoder_neo.setPixelColor(i, 0, 0, 0);
+    encoder_neo.show();
+    delay(time);
+  }
+}
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/rfid.ino"
 void RfidInit(){
   Serial.println("------------Rfid Initialized------------");
   nfc.begin();
@@ -362,4 +332,72 @@ void RfidCheckLoop(){
     Serial.flush();    
   }
   delay (50);
+}
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/wifi.ino"
+void wifi_conn(){
+  HAS2_Wifi();
+  void Setup();
+}
+
+void wifi_state_update(){
+  Receive(itembox);
+  if((int)my["shift_machine"] != 0){
+    wifi_Gstate_appl();
+    wifi_Dstate_appl();
+  }
+}
+
+void wifi_state_send(){
+
+}
+
+// (String)(const char*)my["game_state"] == ;
+
+void wifi_Gstate_appl(){
+  wifi_Gstate = (String)(const char*)my["game_state"];
+  if(wifi_Gstate != current_Gstate){
+    Serial.print("Game State :: ");
+    if(wifi_Gstate == "setting"){
+      Serial.println("Setting");
+      NeoShowColor(White);
+    }
+    else if(wifi_Gstate == "ready"){
+      Serial.println("Ready");
+      NeoShowColor(Red);
+    }
+    else if(wifi_Gstate == "activate"){
+      Serial.println("Activate");
+      GameSystem();
+    }
+    current_Gstate = wifi_Gstate;
+  }
+}
+
+void wifi_Dstate_appl(){
+  wifi_Dstate = (String)(const char*)my["device_state"];
+  if(wifi_Dstate != current_Dstate){
+    if(wifi_Dstate == "activate"){
+
+    }
+    else if(wifi_Dstate == "used"){
+
+    }
+    else if(wifi_Dstate == "open"){
+      
+    }
+    else if(wifi_Dstate == "close"){
+      
+    }
+    else if(wifi_Dstate == "repaired_all"){
+      
+    }
+    else if(wifi_Dstate == "player_win"){
+      
+    }
+    else if(wifi_Dstate == "player_lose"){
+      
+    }
+    current_Dstate = wifi_Dstate;
+  }
+
 }

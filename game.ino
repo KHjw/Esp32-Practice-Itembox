@@ -35,13 +35,17 @@ void GameQuiz_system(){
 void GameQuiz_check(){
   if(Player_guess == Quiz_answer[QuizCount]){
     QuizCount += 1;
-    Serial.print("[[[[Quiz ");    // 네오픽셀 초록
-    Serial.print(QuizCount);
-    Serial.println("]]]] Success");
+
+    Serial.println("[[[[Quiz " + (String)(QuizCount) + "]]]] Success");
     NeoGreen(1500);
   }
   else{
     Serial.println("Quiz Fail");                            //네오픽셀 빨강
     NeoBlink(3, 500);
   }
+}
+
+void itembox_activated(){
+  NeoShowColor(White);
+  
 }

@@ -1,4 +1,4 @@
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\Itembox.h"
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/Itembox.h"
 #ifndef _DONE_ITEMBOX_CODE_
 #define _DONE_ITEMBOX_CODE_
 
@@ -46,9 +46,31 @@ int QuizPASS = 0;
 void NeopixelInit();
 
 void NeoGreen(int time);
-void NeorBlink(int num, int time);
+void NeoBlink(int num, int time);
 void NeoWaiting_Blue();
+void NeoShowColor(int color_code);
+void NeoBlink(int color_code, int num, int time);
 
 Adafruit_NeoPixel encoder_neo(ENCODER_NEONUM,ENCODER_NEOPIN,NEO_GRB + NEO_KHZ800);
+
+enum COLOR{WHITE = 0, RED, YELLOW, GREEN, BLUE, PURPLE, BLACK, BLUE0, BLUE1, BLUE2, BLUE3};
+// Neopixel 색상정보
+int color[11][3] = {    {20, 20, 20},   //WHITE
+                        {40, 0, 0},     //RED        
+                        {40, 40, 0},    //YELLOW
+                        {0, 40, 0},     //GREEN
+                        {0, 0, 40},     //BLUE
+                        {40, 0, 40},    //PURPLE
+                        {0, 0, 0},      //BLACK
+                        {0, 0, 20},     //ENCODERBLUE0
+                        {0, 0, 40},     //ENCODERBLUE1
+                        {0, 0, 60},     //ENCODERBLUE2
+                        {0, 0, 80}};    //ENCODERBLUE3
+
+//****************************************Wifi SETUP**************************************************
+String wifi_Gstate = "";
+String current_Gstate = "";
+String wifi_Dstate = "";
+String current_Dstate = "";
 
 #endif

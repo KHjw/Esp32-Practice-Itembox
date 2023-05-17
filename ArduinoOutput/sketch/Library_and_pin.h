@@ -1,6 +1,7 @@
-#line 1 "c:\\Github\\Esp32-Practice-Itembox\\Library_and_pin.h"
+#line 1 "/Users/kh_jinu/Desktop/git/Esp32-Practice-Itembox/Library_and_pin.h"
 #include <Adafruit_PN532.h>
 #include <Adafruit_NeoPixel.h>
+#include <HAS2_Wifi.h>
 
 #define PN532_SCK     18
 #define PN532_MISO    19

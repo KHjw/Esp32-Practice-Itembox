@@ -41,19 +41,6 @@ void NeoGreen(int time){
   encoder_neo.show();
 }
 
-void NeoBlink(int num, int time){
-  for(int j=0; j<num; j++){
-    for(int i=0; i<ENCODER_NEONUM; i++)
-      encoder_neo.setPixelColor(i, 10, 0, 0);
-    encoder_neo.show();
-    delay(time);
-    for(int i=0; i<ENCODER_NEONUM; i++)
-      encoder_neo.setPixelColor(i, 0, 0, 0);
-    encoder_neo.show();
-    delay(time);
-  }
-}
-
 void NeoWaiting_Blue(){
   for(int i=0; i<ENCODER_NEONUM; i++){
     encoder_neo.setPixelColor(i, 0, 0, 0);
@@ -62,4 +49,24 @@ void NeoWaiting_Blue(){
     encoder_neo.setPixelColor(i, 0, 0, 10);
   }
   encoder_neo.show();
+}
+
+void NeoShowColor(int color_code){
+  for(int i=0; i<ENCODER_NEONUM; i++){
+    encoder_neo.setPixelColor(i, color[color_code]);
+  }
+  encoder_neo.show();
+}
+
+void NeoBlink(int color_code, int num, int time){
+  for(int j=0; j<num; j++){
+    for(int i=0; i<ENCODER_NEONUM; i++)
+      encoder_neo.setPixelColor(i, color[color_code]);
+    encoder_neo.show();
+    delay(time);
+    for(int i=0; i<ENCODER_NEONUM; i++)
+      encoder_neo.setPixelColor(i, 0, 0, 0);
+    encoder_neo.show();
+    delay(time);
+  }
 }

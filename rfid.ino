@@ -14,8 +14,6 @@ void RfidInit(){
 }
 
 void Rfid_Identify(uint8_t data[32]){
-  String RfidID = "";
-
   for(int i=0; i<4; i++){
     RfidID += (char)data[i];
   }
